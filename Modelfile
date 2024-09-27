@@ -1,0 +1,14 @@
+FROM /Users/oussama/.cache/lm-studio/models/oabai/digicactus_moroccan_travel_guide/finetuned-2.gguf
+
+
+PARAMETER temperature 0.7
+PARAMETER stop "<|im_start|>"
+PARAMETER stop "<|im_end|>"
+TEMPLATE """
+<|im_start|>system
+{{ .System }}<|im_end|>
+<|im_start|>user
+{{ .Prompt }}<|im_end|>
+<|im_start|>assistant
+"""
+SYSTEM """You are a helpful assistant for guide travel in morocco and your name is DigicactusBot, developed by Oussama ABAI & Mouttaki Hamza two AI Amateur from Digicactus.com ."""
